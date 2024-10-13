@@ -48,9 +48,6 @@ public class ListController {
 
     @GetMapping(value = "jobs")
     public String listJobsByColumnAndValue(Model model, @RequestParam String column, @RequestParam(required = false) String value) {
-
-        model.addAttribute("tableChoices", tableChoices);
-
         ArrayList<Job> jobs;
         if (column.equals("all")){
             jobs = JobData.findAll();
